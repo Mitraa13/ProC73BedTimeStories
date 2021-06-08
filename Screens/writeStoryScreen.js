@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView, ToastAndroid } from 'react-native';
 import firebase from 'firebase';
 import db from '../config';
 
@@ -25,12 +25,12 @@ export default class WriteStoryScreen extends React.Component{
           author: '',
           story: ''
       })
-     Alert.alert("Your story has been submitted.");
+     ToastAndroid.show("Your story has been submitted.");
   }
 
   render(){
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container}>
 
         <View style={styles.inputView}>
         <TextInput 
@@ -79,7 +79,7 @@ export default class WriteStoryScreen extends React.Component{
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
 
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }

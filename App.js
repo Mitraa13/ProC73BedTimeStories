@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, Image, KeyboardAvoidingView } from 'react-native';
 import {Header} from 'react-native-elements';
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
@@ -13,11 +13,13 @@ export default class App extends React.Component{
     return (
       <SafeAreaProvider style={styles.container}>
 
-      <Header
-      backgroundColor={"#000000" }
-      centerComponent={{text:"Story Hub", style:{color:"white", fontSize:24,}}} 
-      />    
+        <Header
+        backgroundColor={"#000000" }
+        centerComponent={{text:"Story Hub", style:{color:"white", fontSize:24,}}} 
+        />    
+
         <AppContainer />
+        
       </SafeAreaProvider>
     );
   }
