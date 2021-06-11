@@ -15,7 +15,7 @@ export default class WriteStoryScreen extends React.Component{
 
   submitStory = () => {
        db.collection('Story').add({
-            title: this.state.title,
+            title: this.state.title.toUpperCase(),
             author: this.state.author,
             story:this.state.story,
             date: firebase.firestore.Timestamp.now().toDate()
@@ -87,7 +87,7 @@ export default class WriteStoryScreen extends React.Component{
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    backgroundColor: 'violet',
+    backgroundColor: '#FFAEFA',
     padding: 8,
     paddingBottom:50,
   },
